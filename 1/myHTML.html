@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/icons/css/all.css">
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <title>to do List|Fariba Ghorbani</title>
+</head>
+<body>
+    <div class="container">
+        
+        <img class="header-img"src="./Assets/Photos/bg-desktop-light.jpg">
+        
+
+        <div class="main">
+            <div class="intro-button">
+                <h1>TODO</h1>
+                <p class="light-dark-mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun" style="display: none;"></i>
+                </p>
+            </div>
+
+            <div class="app-head">
+                <form data-new-task-form>
+                    <input 
+                    class="input" 
+                    type="text" 
+                    data-new-task-input 
+                    id="todowork" 
+                    name="todowork" 
+                    placeholder="Create a new todo..."
+                    onkeydown="search(this)">
+                </form>
+            </div>
+            <div class="app-body">
+                <div class="app-body-content">
+
+                    <div class="task">
+                        <form class="inner-form-task">
+                            <input type="checkbox" class="checkbox" id="task1-label">
+                            <label for="task1-label">checkbox</label>
+                        </form>
+                        <p class="close-button"></p>
+                    </div>
+                    
+                </div>
+                <div class="app-body-options">
+                    <p>items left</p>
+                    <p>Clear Completed</p>
+                </div>
+            </div>
+            <div class="app-footer">
+                <p>All</p>
+                <p>Active</p>
+                <p>Completed</p>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
