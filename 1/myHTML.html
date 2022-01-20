@@ -8,25 +8,24 @@
     <link rel="stylesheet" href="./Assets/CSS/style.css">
     <title>to do List | Fariba Ghorbani</title>
 </head>
-<body>
+<body style="min-height: 100vh;">
     <div class="container">
         
         <img class="header-img"src="./Assets/Photos/bg-desktop-light.jpg">
-        
 
         <div class="main">
             <div class="intro-button">
                 <h1>TODO</h1>
                 <p class="light-dark-mode">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun" style="display: none;"></i>
+                    <i class="fas fa-moon moon"></i>
+                    <i class="fas fa-sun sun" style="display: none;"></i>
                 </p>
             </div>
 
-            <div class="app-head">
+            <div class="app app-head">
                 <form data-new-task-form>
                     <input 
-                    class="input" 
+                    class="main-input" 
                     type="text" 
                     data-new-task-input 
                     id="todowork" 
@@ -35,16 +34,8 @@
                     onkeydown="createNewTask(this)">
                 </form>
             </div>
-            <div class="app-body">
+            <div class="app app-body">
                 <div class="app-body-content" data-empty="true">
-                    <!-- 
-                    <div class="task">
-                        <form class="inner-form-task">
-                            <input type="checkbox" class="checkbox checkbox-input" id="task1-label">
-                            <label for="task1-label" class="checkbox">checkbox</label>
-                        </form>
-                        <p class="close-button"></p>
-                    </div> -->
                     
                 </div>
                 <div class="app-body-options">
@@ -52,7 +43,7 @@
                     <p class="clear-completed">Clear Completed</p>
                 </div>
             </div>
-            <div class="app-footer">
+            <div class="app app-footer">
                 <p class="all-tasks">All</p>
                 <p class="active-tasks">Active</p>
                 <p class="completed-tasks">Completed</p>

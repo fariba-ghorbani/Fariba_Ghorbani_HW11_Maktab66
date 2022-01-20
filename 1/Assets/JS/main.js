@@ -1,9 +1,19 @@
+let root = document.querySelector(':root')
+let app = Array.from(document.querySelectorAll('.app'))
+let allTasks = Array.from(document.querySelectorAll('.task'))
+let imageHeader = document.querySelector('.header-img')
 let appBodyContent = document.querySelector('.app-body-content')
+let appBodyOptions = document.querySelector('.app-body-options')
 let allButton = document.querySelector('.all-tasks')
+let input = document.querySelector('.main-input')
 let activeButton = document.querySelector('.active-tasks')
 let completedButton = document.querySelector('.completed-tasks')
 let clearCompletedButton = document.querySelector('.clear-completed')
 let itemsLeftParagraph = document.getElementsByClassName('items-left')[0]
+
+let darkLightMode = document.querySelector('.light-dark-mode')
+let moon = document.querySelector('.moon')
+let sun = document.querySelector('.sun')
 
 itemsLeftCalc()
 
@@ -39,6 +49,12 @@ function createNewTask(ele) {
         myForm.appendChild(myLabel)
         myDiv.appendChild(myForm)
         myDiv.appendChild(myParagraph)
+
+        // check theme
+        if (root.classList.contains('dark')) {
+            myDiv.classList.add('dark')
+            myParagraph.classList.toggle('dark')
+        }
 
         appBodyContent.prepend(myDiv)
         let tempList = Array.from(appBodyContent.children)
@@ -130,3 +146,40 @@ function checkContentIsEmpty() {
         appBodyContent.dataset.empty = "true"
     }
 }
+
+// darm theme
+function renderImage() {
+    if (imageHeader.classList.contains('dark')) {
+        imageHeader.src = "./Assets/Photos/bg-desktop-dark.jpg"
+    }
+    else {
+        imageHeader.src = "./Assets/Photos/bg-desktop-light.jpg"
+    }
+}
+
+darkLightMode.addEventListener('click', e => {
+    if (moon.style.display === "none") {
+        moon.style.display = "block"
+        sun.style.display = "none"
+    } else {
+        moon.style.display = "none"
+        sun.style.display = "block"
+    }
+    root.classList.toggle('dark')
+    appBodyOptions.classList.toggle('dark')
+    appBodyContent.classList.toggle('dark')
+    input.classList.toggle('dark')
+    
+    app.forEach(item => {
+        item.classList.toggle('dark')
+    })
+    let temp = Array.from(appBodyContent.children)
+    temp.forEach(item => {
+        item.classList.toggle('dark')
+    })
+    temp.forEach(item => {
+        item.children[1].classList.toggle('dark')
+    })
+    imageHeader.classList.toggle('dark')
+    renderImage()
+})
