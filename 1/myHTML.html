@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Assets/icons/css/all.css">
     <link rel="stylesheet" href="./Assets/CSS/style.css">
-    <title>to do List|Fariba Ghorbani</title>
+    <title>to do List | Fariba Ghorbani</title>
 </head>
 <body>
     <div class="container">
@@ -32,33 +32,33 @@
                     id="todowork" 
                     name="todowork" 
                     placeholder="Create a new todo..."
-                    onkeydown="search(this)">
+                    onkeydown="createNewTask(this)">
                 </form>
             </div>
             <div class="app-body">
-                <div class="app-body-content">
-
+                <div class="app-body-content" data-empty="true">
+<!-- 
                     <div class="task">
                         <form class="inner-form-task">
-                            <input type="checkbox" class="checkbox" id="task1-label">
-                            <label for="task1-label">checkbox</label>
+                            <input type="checkbox" class="checkbox checkbox-input" id="task1-label">
+                            <label for="task1-label" class="checkbox">checkbox</label>
                         </form>
                         <p class="close-button"></p>
-                    </div>
+                    </div> -->
                     
                 </div>
                 <div class="app-body-options">
-                    <p>items left</p>
-                    <p>Clear Completed</p>
+                    <p class="items-left" data-num="">items left</p>
+                    <p class="clear-completed">Clear Completed</p>
                 </div>
             </div>
             <div class="app-footer">
-                <p>All</p>
-                <p>Active</p>
-                <p>Completed</p>
+                <p class="all-tasks">All</p>
+                <p class="active-tasks">Active</p>
+                <p class="completed-tasks">Completed</p>
             </div>
         </div>
     </div>
-    <script src="./main.js"></script>
+    <script src="./Assets/JS/main.js"></script>
 </body>
 </html>
